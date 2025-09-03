@@ -35,7 +35,7 @@ export default function Home() {
       setLoadingResumes(false);
     }
     loadResumes();
-  })
+  },[auth.isAuthenticated])
 
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar />
@@ -65,7 +65,7 @@ export default function Home() {
       {!loadingResumes && resumes?.length === 0 &&(
         <div className="flex flex-col items-center justify-center mt-10 gap-4">
           <Link to="/upload" className="primary-button w-fit text-xl font-semibold">
-            Upload Resume
+            Upload Your CV
           </Link>
         </div>
       )}

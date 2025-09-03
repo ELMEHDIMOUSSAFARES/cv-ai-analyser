@@ -13,6 +13,7 @@ const ResumeCard = ({resume:{id,companyName,jobTitle, feedback, imagePath}}: {re
         if(!blob) return;
         let url = URL.createObjectURL(blob);
         setResumeUrl(url);
+        console.log(`Resumes found: `, url, imagePath)
       }
       loadResume();
     }, [imagePath])
